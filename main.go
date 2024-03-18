@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/aztecrabbit/brainfuck-psiphon-pro-go/src/libpsiphon"
-	"github.com/aztecrabbit/libinject"
+	"github.com/hieuvn/bftunnel/src/libpsiphon"
+	"github.com/hieuvn/libinject"
 	"github.com/aztecrabbit/liblog"
 	"github.com/aztecrabbit/libproxyrotator"
 	"github.com/aztecrabbit/libredsocks"
@@ -47,7 +47,7 @@ func init() {
 }
 
 func GetConfigPath(filename string) string {
-	return libutils.GetConfigPath("brainfuck-psiphon-pro-go", filename)
+	return libutils.GetConfigPath("bftunnel", filename)
 }
 
 func main() {
