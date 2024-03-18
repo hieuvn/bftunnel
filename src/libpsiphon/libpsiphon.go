@@ -25,15 +25,15 @@ var (
 			"FRONTED-MEEK-HTTP-OSSH",
 			"FRONTED-MEEK-OSSH",
 		},
-		TunnelWorkers:  6,
-		KuotaDataLimit: 4,
+		TunnelWorkers:  8,
+		KuotaDataLimit: 1,
 		Authorizations: make([]string, 0),
 	}
 	DefaultKuotaData = &KuotaData{
 		Port: make(map[int]map[string]float64),
 		All:  0,
 	}
-	ConfigPathPsiphon = libutils.GetConfigPath("brainfuck-psiphon-pro-go", "storage/psiphon")
+	ConfigPathPsiphon = libutils.GetConfigPath("bftunnel", "storage/psiphon")
 )
 
 func Stop() {
@@ -126,7 +126,7 @@ func (p *Psiphon) Start() {
 		PropagationChannelId:      "00000000000000FF",
 		EmitBytesTransferred:      true,
 		EmitDiagnosticNotices:     true,
-		DisableLocalHTTPProxy:     true,
+		DisableLocalHTTPProxy:     false,
 		EgressRegion:              strings.ToUpper(p.Config.Region),
 		TunnelPoolSize:            p.Config.Tunnel,
 		ConnectionWorkerPoolSize:  p.Config.TunnelWorkers,
