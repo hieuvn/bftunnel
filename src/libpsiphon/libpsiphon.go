@@ -126,7 +126,7 @@ func (p *Psiphon) Start() {
 		PropagationChannelId:      "00000000000000FF",
 		EmitBytesTransferred:      true,
 		EmitDiagnosticNotices:     true,
-		DisableLocalHTTPProxy:     false,
+		DisableLocalHTTPProxy:     true,
 		EgressRegion:              strings.ToUpper(p.Config.Region),
 		TunnelPoolSize:            p.Config.Tunnel,
 		ConnectionWorkerPoolSize:  p.Config.TunnelWorkers,
